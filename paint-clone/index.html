@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CGPaint - Digital Drawing Tool</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/script.js" defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<section class="drawing-board">
+				<canvas></canvas>
+			</section>
+			<section class="tools-board">
+				<div class="row">
+					<label class="title">Shapes</label>
+					<ul class="options">
+						<li class="option tool" id="rectangle">
+							<img src="icons/rectangle.svg" alt="Rectangle" />
+							<span>Rectangle</span>
+						</li>
+						<li class="option tool" id="circle">
+							<img src="icons/circle.svg" alt="Circle" />
+							<span>Circle</span>
+						</li>
+						<li class="option tool" id="triangle">
+							<img src="icons/triangle.svg" alt="Triangle" />
+							<span>Triangle</span>
+						</li>
+						<li class="option">
+							<input type="checkbox" id="fill-color" />
+							<label for="fill-color">Fill Color</label>
+						</li>
+					</ul>
+				</div>
+				<div class="row">
+					<label class="title">Tools</label>
+					<ul class="options">
+						<li class="option tool active" id="brush">
+							<img src="icons/brush.svg" alt="Brush" />
+							<span>Brush</span>
+						</li>
+						<li class="option tool" id="eraser">
+							<img src="icons/eraser.svg" alt="Eraser" />
+							<span>Eraser</span>
+						</li>
+						<li class="option">
+							<input type="range" id="size-slider" min="1" max="30" value="5" />
+							<label for="size-slider">Size</label>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="controls">
+					<label for="speed-slider">Speed: </label>
+					<input type="range" id="speed-slider" min="0" max="1000" step="100" value="0">
+					<span id="speed-value">0ms</span>
+				</div>
+				
+				<section class="row">
+					<label class="title">Line and Circle Drawing</label>
+					<ul class="options">
+						<li class="option tool" id="dda-line">
+							<button>DDA Line</button>
+						</li>
+						<li class="option tool" id="bresenham-line">
+							<button>Bresenham Line</button>
+						</li>
+						<li class="option tool" id="bresenham-circle">
+							<button>Bresenham Circle</button>
+						</li>
+						<li>
+					<button id="scan-line-fill">Scan-Line Fill</button>
+<button id="finish-polygon">Finish Polygon</button>
+
+
+						</li>
+						<li>
+							<button id="clipping-start" >Clipping Start</button>
+							<button id="clipping-finish" >Clipping Finish</button>
+
+						</li>
+					</ul>
+
+
+				</section>
+				<div class="row transformations">
+					<button id="translate-btn">Translate</button>
+					<button id="rotate-btn">Rotate</button>
+					<button id="scale-btn">Scale</button>
+				</div>
+				
+				<div class="row colors">
+					<label class="title">Colors</label>
+					<ul class="options">
+						<li class="option"></li>
+						<li class="option selected"></li>
+						<li class="option"></li>
+						<li class="option"></li>
+						<li class="option">
+							<input type="color" id="color-picker" value="#4a98f7" />
+						</li>
+					</ul>
+				</div>
+				<div class="row buttons">
+					<button class="clear-canvas">Clear Canvas</button>
+					<button class="save-img">Save Image</button>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
